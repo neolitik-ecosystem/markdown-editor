@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Explorer from './views/explorer';
+import ActionsMenu from './views/actions-menu';
+import MarkDownEditor from './views/markdown/editor';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ActionsMenu />
+        <Explorer />
+        <MarkDownEditor />
       </div>
     );
   }
 }
+
+/*
+<Explorer />
+<Document />
+<Preview />
+*/
 
 export default App;

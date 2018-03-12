@@ -1,0 +1,27 @@
+.explorer {
+    display: inline-block;
+    width: 250px;
+    min-height: 100vh;
+    background: rgb(62, 109, 172);
+    padding: 0 20px;
+}
+
+.explorer nav ul {
+    padding: 0;
+}
+
+.explorer nav ul li.active {
+    background: #000000;
+}
+
+.explorer span {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 100;
+    color: #2B3A42;
+}
+
+.explorer .delete {
+    float: right;
+    text-align: end;
+}

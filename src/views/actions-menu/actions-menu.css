@@ -1,0 +1,10 @@
+.actions-menu {
+    display: inline-block;
+    width: 72px;
+    min-height: 100vh;
+    background: #EFEFEF;
+}
+
+.actions-menu nav ul {
+    padding: 0;
+}

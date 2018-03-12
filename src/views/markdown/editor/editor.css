@@ -1,0 +1,8 @@
+.editor {
+    display: inline-block;
+    width: 50vw;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    border: 1px solid #000000;
+    padding: 80px 20px 20px 20px;
+}

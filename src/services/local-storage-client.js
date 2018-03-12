@@ -25,6 +25,12 @@ export default class LocalStorageClient {
         });
     }
 
+    saveDocument(document)  {
+        return new Promise((resolve, reject) => {
+            resolve(document);
+        });
+    }
+
     deleteDocument(ref) {
         return new Promise((resolve, reject) => {
             this.getDocuments().then( (documents) => {

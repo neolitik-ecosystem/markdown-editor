@@ -8,7 +8,8 @@ export default class MarkdownEditor extends Component {
     static propTypes = {
         document: PropTypes.object,
         config: PropTypes.object,
-        deleteDocument: PropTypes.func
+        deleteDocument: PropTypes.func,
+        saveDocument: PropTypes.func
     }
 
     static defaultProps = {
@@ -16,11 +17,12 @@ export default class MarkdownEditor extends Component {
         config: { settings: {} }
     }
 
+    
     render() {
         const { document, config } = this.props;
         return (
             <section className='editor' id='editor'>
-                <EditorHeader meta={ document } />
+                <EditorHeader meta={ document } saveDocument={ this.props.saveDocument }/>
                 <Button className='delete' size='large'
                     onClick={ () => this.props.deleteDocument(document.ref) }
                     theme={ { button: config.settings.defaultTheme.deleteButton } }>

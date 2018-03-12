@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MarkdownEditorComponent from './editor.component';
-import { deleteDocument } from '../../../actions/documents';
+import { deleteDocument, saveDocument } from '../../../actions/documents';
 import { getSelectedDocumentSelector } from '../../../selectors/documents';
 
 const mapStateToProps = (state) => ({
@@ -12,6 +12,9 @@ const mapDispatchToProps = dispatch => {
     return {
         deleteDocument: (ref) => {
           dispatch(deleteDocument(ref));
+        },
+        saveDocument: (payload) => {
+            dispatch(saveDocument(payload));
         }
     }
 };

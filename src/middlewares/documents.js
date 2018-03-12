@@ -11,8 +11,10 @@ const documents = client => store => next => action => {
           action.payload = [ ...documents ];
           result = next(action);
           // Dispatch an action to open the most recent document
-          const ref = documents[documents.length -1].ref;
-          store.dispatch(openDocument(ref));
+          if (documents.length > 0){
+            const ref = documents[documents.length -1].ref;
+            store.dispatch(openDocument(ref));
+          }
         });
         break;
       case types.CREATE_DOCUMENT:
@@ -27,6 +29,13 @@ const documents = client => store => next => action => {
       case types.DELETE_DOCUMENT:
         client.deleteDocument(action.payload.ref).then((documents) => {
           action.payload = [ ...documents ];
+          result = next(action);
+        });
+        break;
+      case types.SAVE_DOCUMENT:
+      console.log('test')
+        client.saveDocument(action.payload).then((document) => {
+          action.payload = { ...document };
           result = next(action);
         });
         break;

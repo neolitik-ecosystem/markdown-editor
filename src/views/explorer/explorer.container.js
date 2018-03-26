@@ -6,7 +6,7 @@ import { getDocumentsSelector, getSelectedDocumentSelector } from '../../selecto
 const mapStateToProps = (state) => ({
     documents: {
         selected: getSelectedDocumentSelector(state),
-        collection: state.documents.collection
+        collection: getDocumentsSelector(state)
     },
     config: state.app.explorer
 });

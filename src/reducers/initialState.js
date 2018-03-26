@@ -3,7 +3,7 @@ import { DefaultTheme } from 'neolitik-react-atomic-ui';
 export default {
     documents: {
         selected: {
-            ref: null,
+            ref: null
         },
         collection: []
     },
@@ -25,7 +25,9 @@ export default {
         },
         explorer: {
             settings: {
-                size: DefaultTheme.sizes.SMALL,
+                listItemSize: DefaultTheme.sizes.SMALL,
+                titleSize: DefaultTheme.sizes.MEDIUM,
+                dateSize: DefaultTheme.sizes.SMALL,
                 center: false,
                 defaultTheme: {
                     listItem: {
@@ -35,6 +37,18 @@ export default {
                         backgroundSelected: DefaultTheme.colors.HIGHLIGHT,
                         border: 'none',
                         borderRadius: '5px'
+                    },
+                    title: {
+                        color: DefaultTheme.colors.DARK,
+                        background: 'none',
+                        border: 'none',
+                        borderRadius: '0'
+                    },
+                    date: {
+                        color: DefaultTheme.colors.DARK,
+                        background: 'none',
+                        border: 'none',
+                        borderRadius: '0'
                     }
                 }
             }
@@ -42,17 +56,32 @@ export default {
         editor: {
             settings: {
                 defaultTheme: {
-                    listItem: {
-                        color: DefaultTheme.colors.PRIMARY,
-                        background: 'none',
-                        backgroundHover: DefaultTheme.colors.HIGHLIGHT,
-                        border: 'none',
-                        borderRadius: '5px'
+                    editorHeader: {
+                        input: {
+                            color: DefaultTheme.colors.PRIMARY,
+                            background: 'none',
+                            border: 'none',
+                            borderRadius: '0'
+                        },
+                        text: {
+                            color: DefaultTheme.colors.DARK,
+                            background: 'none',
+                            border: 'none',
+                            borderRadius: '0'
+                        }
                     },
                     deleteButton: {
                         background: DefaultTheme.colors.DANGER,
                         border: 'none',
                         borderRadius: '5px' 
+                    },
+                    textArea: {
+                        color: DefaultTheme.colors.PRIMARY,
+                        background: 'none',
+                        border: 'none',
+                        borderRadius: '0',
+                        padding: '20px 0 0 0',
+                        fontSize: '14px'
                     }
                 }
             }

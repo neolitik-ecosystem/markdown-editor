@@ -14,8 +14,8 @@ export default function documents(state = initialState.documents, action) {
         collection: [ ...state.collection, action.payload ]
       };
     case types.SAVE_DOCUMENT:
-    let collection = [ ...state.collection ];
-    const index = collection.findIndex( document => document.ref === { ...action.payload } )
+      let collection = [ ...state.collection ];
+      const index = collection.findIndex( document => document.ref === action.payload.ref )
       collection[index] = { ...action.payload };
       return {
         ...state,

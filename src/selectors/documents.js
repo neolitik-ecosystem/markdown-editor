@@ -17,14 +17,8 @@ export const getDocumentsSelector = createSelector(
     (documents) => (documents)
 );
 
-// Return seleced document ref
+// Return selected document ref
 const getSelectedDocumentRef = state => state.documents.selected.ref;
-
-// Return selected document
-const getSelectedDocument = state => {
-    const selected = getSortedDocumentsByDateDesc(state).find(document => document.ref === getSelectedDocumentRef(state));
-    return selected ? selected : { ref: null };
-}
 
 /**
  * Selector to return selected document.
@@ -32,6 +26,9 @@ const getSelectedDocument = state => {
  * @returns {Document{}} Document object
  */
 export const getSelectedDocumentSelector = createSelector(
-    getSelectedDocument,
-    (document) => (document)
+    [getDocuments,getSelectedDocumentRef],
+    (collection,ref) => {
+        const selected = collection.find(document => document.ref === ref);
+        return selected ? selected : { ref: null, content: '' }; 
+    }   
 );

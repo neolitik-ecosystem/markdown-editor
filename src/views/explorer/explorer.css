@@ -1,7 +1,7 @@
 .explorer {
     display: inline-block;
-    width: 250px;
-    min-height: 100vh;
+    width: 170px;
+    min-height: 100%;
     background: rgb(62, 109, 172);
     padding: 0 20px;
 }
@@ -16,9 +16,11 @@
 
 .explorer span {
     font-family: 'Roboto';
-    font-style: italic;
     font-weight: 100;
-    color: #2B3A42;
+}
+
+.explorer .date {
+    font-style: italic;
 }
 
 .explorer .delete {

@@ -31,17 +31,17 @@ export default class Explorer extends Component {
     render() {
         const { documents, config } = this.props;
         const { collection } = documents
-        console.log(documents);
         return (
             <section className='explorer' id='explorer'>
                 <nav>
                     <ul>
-                    { collection.map((doc) => 
+                    { collection.map((doc, index) => 
                            <ExplorerDocument
                                 onClick={ this.selectDocument }
                                 key={ doc.ref }
                                 document={ doc }
                                 config={ config }
+                                index={ index }
                                 selected={ documents.selected.ref === doc.ref }
                             /> 
                         )

@@ -27,7 +27,17 @@ export default class LocalStorageClient {
 
     saveDocument(document)  {
         return new Promise((resolve, reject) => {
-            resolve(document);
+            this.getDocuments().then( (documents) => {
+                const index = documents.findIndex((doc) => {
+                    return doc.ref === document.ref;
+                });
+
+                // Date
+                document.updatedAt = new Date().toISOString();;
+                documents[index] = document;
+                localStorage.setItem('documents', JSON.stringify(documents));
+                resolve(document);
+            })
         });
     }
 

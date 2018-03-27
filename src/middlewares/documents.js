@@ -21,6 +21,15 @@ const documents = client => store => next => action => {
           store.dispatch(openDocument(ref));
         });
         break;
+      case types.CREATE_DOCUMENT_FROM_JSON:
+        client.createDocument(action.payload).then((document) => {
+          action.payload = { ...document };
+          result = next(action);
+          // Dispatch an action to open just created document
+          const ref = document.ref;
+          store.dispatch(openDocument(ref));
+        });
+        break;
       case types.DELETE_DOCUMENT:
         client.deleteDocument(action.payload.ref).then((documents) => {
           action.payload = [ ...documents ];

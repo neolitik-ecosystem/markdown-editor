@@ -8,6 +8,7 @@ export default function documents(state = initialState.documents, action) {
         ...state,
         collection: [ ...action.payload ]
       };
+    case types.CREATE_DOCUMENT_FROM_JSON:
     case types.CREATE_DOCUMENT:
       return {
         ...state,

@@ -14,6 +14,13 @@ export function createDocument() {
   };
 }
 
+export function createDocumentFromJSON(payload) {
+  return {
+    type: types.CREATE_DOCUMENT_FROM_JSON,
+    payload
+  }; 
+}
+
 export function saveDocument(payload) {
   return {
     type: types.SAVE_DOCUMENT,

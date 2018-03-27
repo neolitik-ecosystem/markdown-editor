@@ -1,23 +1,32 @@
 export default class LocalStorageClient {
-    createDocument() {
+    createDocument(source) {
         return new Promise((resolve, reject) => {
+
             // Get current documents
             const stored = localStorage.getItem('documents');
             const documents = JSON.parse(stored);
 
-            // Generate a ref
-            const ref = '_' + Math.random().toString(36).substr(2, 9);
-            // Date
-            const date = new Date().toISOString();
+            // Create base document object
+            let document = {};
+            
+            if(!source) {
+                // Generate a ref
+                const ref = '_' + Math.random().toString(36).substr(2, 9);
+                // Date
+                const date = new Date().toISOString();
 
-            // New document
-            const document = {
-                ref,
-                title: 'Untitled',
-                content: '# GET STARTED',
-                createdAt: date,
-                updatedAt: date
-            };
+                // New document
+                document = {
+                    ref,
+                    title: 'Untitled',
+                    content: '# GET STARTED',
+                    createdAt: date,
+                    updatedAt: date
+                };
+            } else {
+                document = { ...source };
+            }
+            
 
             documents.push(document);
             localStorage.setItem('documents', JSON.stringify(documents));

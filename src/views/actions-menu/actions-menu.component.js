@@ -17,6 +17,9 @@ export default class ActionsMenu extends Component {
         const { settings } = this.props.config;
         return (
             <section className='menu' id='menu'>
+                <div className='logo'>
+                    <span>N#</span>
+                </div>
                 <nav>
                     <ul>
                         <ListItem

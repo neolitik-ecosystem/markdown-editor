@@ -5,16 +5,14 @@ import MarkdownRenderer from 'react-markdown-renderer';
 export default class MarkdownPreview extends Component {
     static propTypes = {
         document: PropTypes.object,
-        config: PropTypes.object
     }
 
     static defaultProps = {
-        document: { content: ''},
-        config: { settings: {} }
+        document: { content: ''}
     }
 
     render() {
-        const { document, config } = this.props;
+        const { document } = this.props;
         return (
             <section className='preview' id='preview'>
                 <div className='preview-rendered'>

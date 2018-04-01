@@ -25,3 +25,17 @@
     padding: 5px;
     display: block;
 }
+
+.menu .version {
+    background: #000000;
+    color: #FFFFFF;
+    margin: auto;
+    text-align: center;
+    height: 24px;
+    font-size: 11px;
+}
+
+.menu .version span {
+    padding: 5px;
+    display: block;
+}

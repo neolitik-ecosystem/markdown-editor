@@ -8,6 +8,7 @@ export default {
         collection: []
     },
     app: {
+        version: process.env.REACT_APP_VERSION,
         actionsMenu: {
             settings: {
                 size: DefaultTheme.sizes.LARGE,

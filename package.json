@@ -1,6 +1,6 @@
 {
   "name": "markdown-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://neolitik-ecosystem.github.io/markdown-editor",
   "dependencies": {
@@ -23,8 +23,8 @@
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
     "build": "REACT_APP_VERSION=$npm_package_version react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
